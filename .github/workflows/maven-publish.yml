@@ -27,7 +27,7 @@ jobs:
         java-version: 18
     - 
       name: Build project with Maven
-      run: mvn -B package --file merger/pom.xml
+      run: mvn -T 1C package -DskipTests --file merger/pom.xml
     -  
       name: Build and push beer-service
       working-directory: merger/
