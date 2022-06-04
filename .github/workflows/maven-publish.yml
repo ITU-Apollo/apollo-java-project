@@ -29,6 +29,9 @@ jobs:
       name: Build project with Maven
       run: mvn -T 1C package -DskipTests --file merger/pom.xml
     -  
-      name: Build and push beer-service
+      name: Build merger
       working-directory: merger/
       run: docker build --progress=plain . --file Dockerfile -t ${{ secrets.DOCKERHUB_USERNAME }}/merger:latest
+    -
+      name: Push merger
+      run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/merger:latest
