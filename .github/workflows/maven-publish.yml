@@ -31,8 +31,4 @@ jobs:
 
     -
       name: Build and push beer-service
-      uses: docker/build-push-action@v3
-      with:
-        context: merger/
-        push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/merger:latest
+      run: /merger docker build . -t ${{ secrets.DOCKERHUB_USERNAME }}/merger:latest
