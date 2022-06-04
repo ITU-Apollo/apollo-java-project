@@ -22,4 +22,5 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     -
       name: Build and push beer-service
+      working-directory: merger
       run: docker build . --file merger/Dockerfile -t ${{ secrets.DOCKERHUB_USERNAME }}/merger:latest
