@@ -5,6 +5,7 @@ COPY src ./src
 RUN target=/root/.m2 ["mvn", "-T", "1C", "package", "-DskipTests"]
 
 FROM openjdk:17-slim
+RUN  ["ls","-la"]
 COPY target/*.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
 EXPOSE 9671
