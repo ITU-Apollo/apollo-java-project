@@ -1,5 +1,5 @@
 FROM maven:3.8.2-openjdk-16-slim
-WORKDIR /
+WORKDIR /merger/
 COPY pom.xml .
 COPY src ./src
 RUN target=/root/.m2 ["mvn", "-T", "1C", "package", "-DskipTests"]
