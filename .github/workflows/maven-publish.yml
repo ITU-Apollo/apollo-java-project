@@ -31,4 +31,4 @@ jobs:
 
     -
       name: Build and push beer-service
-      run: docker build ./merger --file Dockerfile -t ${{ secrets.DOCKERHUB_USERNAME }}/merger:latest
+      run: docker build . --file merger/Dockerfile -t ${{ secrets.DOCKERHUB_USERNAME }}/merger:latest
